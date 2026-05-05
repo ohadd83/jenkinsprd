@@ -4,7 +4,7 @@ pipeline {
     environment {
         IMAGE_NAME = "ohadd306/simple-app"
         IMAGE_TAG = "${BUILD_NUMBER}"
-        EC2_HOST = "<EC2_PUBLIC_IP>"
+        EC2_HOST = 18.199.237.108
     }
 
     stages {
