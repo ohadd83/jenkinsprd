@@ -32,7 +32,7 @@ pipeline {
 
         stage('Deploy to EC2') {
             steps {
-                sshagent(['ec2-prod-key']) {
+                sshagent(['prod-ssh-key']) {
                     sh """
                     ssh -o StrictHostKeyChecking=no ec2-user@${EC2_HOST}
                         
