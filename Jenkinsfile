@@ -34,7 +34,7 @@ pipeline {
             steps {
                 sshagent(['ec2-prod-key']) {
                     sh """
-                    ssh -o StrictHostKeyChecking=no ec2-user@${EC2_HOST}'
+                    ssh -o StrictHostKeyChecking=no ec2-user@${EC2_HOST}
                         
                         docker pull ${IMAGE_NAME}:${IMAGE_TAG}
 
@@ -43,7 +43,7 @@ pipeline {
 
                         docker run -d -p 80:3000 --name app ${IMAGE_NAME}:${IMAGE_TAG}
 
-                    '
+                    
                     """
                 }
             }
